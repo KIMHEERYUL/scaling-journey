@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			form{
+				border: 1px solid black
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h4>form checkbox</h4>
+		<hr/>
+		
+		<form>
+			<!--  -->
+			<!-- checked는 기본적으로 체크할지 여부 -->
+			<!-- id는 for와 매칭 -->
+			<!-- name은 그룹의 이름, 서버에서의 키 -->
+			<!-- value 값은 전송의 value와 매칭 -->
+			
+			<input id="language1" type="checkbox" name="fav_language" value="html" checked="checked"/>
+			<label for="language1">HTML</label>
+			<br>
+			
+			<input id="language2" type="checkbox" name="fav_language" value="css" />
+			<label for="language2">CSS</label>
+			<br>
+			
+			<input id="language3" type="checkbox" name="fav_language" value="javaScript" />
+			<label for="language3">JavaScript</label>
+			<br>
+			
+			<input type="submit" value="전송"/><br>
+		
+		</form>
+	
+	
+	</body>
+</html>

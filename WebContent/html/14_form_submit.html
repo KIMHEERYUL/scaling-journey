@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			form{
+				border: 1px solid black
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h4>form submit button</h4>
+		<hr/>
+		
+		<form>
+			<label for="fname">First name:</label><br>
+			<input id="fname" type="text" name="fname2"/><br>
+			
+			<label for=lname">Last name:</label><br>
+			<input id="lname" type="text" name="lname"/><br><br>
+			
+			<!-- 제출 기능(서버로 전송) 버튼-->
+			<!-- value에 버튼 위에 쓸 글자 작성 -->
+			<!-- button도 같은 기능을 한다 (type="submit") -->
+			<input type="submit" value="로그인"/>
+			<button>로그인</button>
+			<input type="image" src="../images/green-button.png" height="30"/>
+		</form>
+		
+		<!-- form 밖에서 button은 type="submit"이 아니다 type="button"-->
+		<button>로그인</button>
+	
+	
+	</body>
+</html>
