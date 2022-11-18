@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+			//객체를 생성해서 car라는 변수에 대입
+			const car = {
+				//객체 속성 선언(Properties)
+				name:"그랜저",
+				price: 50000000,
+				speed: 0,
+				tire: {kind:"snow", radious:700},
+				
+				//메소드 선언(Methods)
+				//ES5 선언법
+				start: function(){
+					console.log("시동을 겁니다");
+					this.speed = 10;
+				},
+				//ES6 추가된 선언법
+				stop(){
+					console.log("시동을 끕니다");
+					this.speed = 0;
+				}
+			};
+			
+			for(let prop in car){
+				//console.log(prop, typeof(prop));
+				
+				let value = car[prop];
+				
+				//console.log(value, typeof(value));
+				
+				if(typeof(value)!== "function"){
+					//속성값 출력
+					console.log(prop+": "+value);
+				}else{
+					//함수호출
+					value();
+				}
+			}
+			
+			//속성제거
+			delete car.speed;
+			
+			for(let prop in car){
+				console.log(prop);
+			}
+		</script>
+	</head>
+	
+	<body>
+		
+	</body>
+</html>

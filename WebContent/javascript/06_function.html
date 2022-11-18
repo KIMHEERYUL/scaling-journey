@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+			//함수 선언
+			function fun1(){
+				console.log("fun1 실행");
+			}
+			
+			//함수 호출
+			fun1();
+			
+			//함수 선언
+			function fun2(x, y){
+				return (x + y);
+			}
+			
+			//함수 호출 후 리턴값 받기
+			let result = fun2(2,3);
+			console.log("result: "+ result);
+			
+			function ask(name){
+				console.log(name+"님이 들어오셨습니다.");
+				console.log("너 뭐함");
+				console.log("열심히 하자");
+			}
+			ask("홍길동");
+			ask("윈터");
+			ask("보라");
+			
+			function fun3(arg1, arg2, arg3){
+				if(arg1) console.log("arg1: "+ arg1);
+				if(arg2) console.log("arg2: "+ arg2);
+				if(arg3) console.log("arg3: "+ arg3);
+				console.log("------------");
+			}
+			//의미론적으로 true나 false가 있으면 된다
+			//undefined는 false이다
+			//값이 주어진 경우만 실행
+			
+			fun3();
+			fun3("홍");
+			fun3("홍","김");
+			fun3("홍","김","자바");
+			/*
+			console.log("홍길동님이 들어오셨습니다.");
+			console.log("너 뭐함");
+			console.log("열심히 하자");
+			
+			console.log("윈터님이 들어오셨습니다.");
+			console.log("너 뭐함");
+			console.log("열심히 하자");
+			
+			console.log("보라님이 들어오셨습니다.");
+			console.log("너 뭐함");
+			console.log("열심히 하자");
+			*/
+		</script>
+	</head>
+	
+	<body>
+		<div class="card">
+			<div class="card-header">
+				Function
+			</div>
+			<div class="card-body">
+				<button onclick="fun1()" class="btn btn-info btn-small">fun1() 호출</button>
+			</div>
+		</div>
+		
+	</body>
+</html>
