@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	</head>
+	
+	<body>
+		<script>
+			//정규표현식과 일치하는 내용을 찾을 때
+			var text = "The rain in SPAIN stays mainly in the plain";
+			console.log(text.match("ain"));
+			console.log(text.match(/ain/));
+			console.log(text.match(/ain/g));
+			
+			console.log(text.match(/ain/gi));
+			
+			if(text.match(/love/gi)){
+				console.log("love가 포함되어 있음");
+			}else{
+				console.log("love가 없음");
+			}
+			
+			//시작은 ^ 끝은 $
+			var tel = "010-123-1234";
+			var telPattern = /^010-\d{3,4}-\d{4}$/;
+			var result = telPattern.test(tel);
+			console.log(result);
+			if(result){
+				console.log("전화번호 형식이 아닙니다. 다시 입력해주세요");
+			}
+			
+			//'+' 한개이상, '*' 0개이상, ? 하나 있던지 없던지, []내부는 이중에 하나, w 알파벳 숫자등 문자
+			var email = "fall@naver.com";
+			var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			
+			
+		</script>
+	</body>
+</html>
