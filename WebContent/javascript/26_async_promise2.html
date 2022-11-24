@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+			//Promise생성
+			function work(){
+				let promise = new Promise(function(resolve, reject){
+					//실제 작업 내용 정의(시간을 필요로 하는 작업)
+					//......
+					let result = true;
+					if(result){
+						resolve("success");
+					}else{
+						reject("fail");
+					}
+				});
+				return promise;
+			}
+			//Button Click 이벤트 발생시 실행하는 함수
+			//fun1()함수 자체를 비동기 처리 시키는 async를 붙인다
+			//function2 처리할때 fun1을 기다려주지 않는다
+			//함수 내부에서 기다리는 명령(await)가 있기때문에(동기!)
+			//함수 외부에서 async로 함수 자체는 비동기 처리를 해줘야한다
+			//리액트나 뷰 사용시 async / await를 사용하는 경우가 많다
+			
+			async function fun1(){
+				try{
+					var result = await work();
+					console.log(result);
+				}catch(err){
+					console.log(err);
+				}
+			}
+			
+			function fun2(){
+				console.log("이벤트 처리 시작");
+				fun1();
+				console.log("이벤트 처리 종료");
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div class ="card">
+			<div class="card-header">Promise</div>
+			<div class="card-body">
+				<button onclick="fun1()" class="btn btn-info btn-sm">Promise 실행</button>
+			</div>
+		</div>
+	</body>
+</html>
